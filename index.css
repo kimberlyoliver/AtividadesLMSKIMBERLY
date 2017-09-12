@@ -1,0 +1,35 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+
+nav{
+    background-color: red;
+    /*height: 48px;*/
+    overflow: auto;
+}
+
+nav ul{
+    list-style: none;
+}
+
+nav ul li a{
+    text-decoration: none;
+    display: block;
+    padding: 15px;
+    float: left;
+    color: white;
+}
+
+nav ul li a:hover{
+    background-color: darkred;
+}
+
+h1{
+    padding: 10px;
+}
+
+h2{
+    padding: 10px;
+}
