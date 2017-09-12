@@ -1,0 +1,68 @@
+body{
+    background-image: url(bg.png);
+    background-repeat: repeat-x;
+    width: 70%;
+    margin:auto;
+    border: double;
+    border-color: blueviolet;
+    height: 100%;
+  }
+
+  nav li{
+      list-style: none;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1cm;
+      margin: 10px;
+      display: inline-block;
+  }
+
+  nav h1{
+      margin: 10px;
+      border-style: dotted groove dashed solid;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 5vh;
+      border-bottom-color: yellowgreen;
+      color: brown;    
+  }
+
+  section{
+    padding: 10vh;
+  }
+  
+  p{
+    font-family: sans-serif;
+    font-size: 100%;
+    text-align: justify;
+    color: darkblue;
+  }
+
+  h1{
+    font-size: 70%;
+    border-style:groove;
+  }
+
+  form{
+      background-color:darkred;
+      padding: 5%;
+      border-style: dashed;
+      color: white;    
+  }
+
+  .bonequinho{
+      background-image: url(paisagem.jpg);
+      padding: 5%;
+      font-size: 300%
+  }
+
+  form imput{
+      color: white;
+  }
+  
+  audio{
+    padding-right: 20%;
+  }
+
+  iframe{
+      margin-right: 30vm;
+      width: 100%;
+  }
