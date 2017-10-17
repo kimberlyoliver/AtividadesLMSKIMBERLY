@@ -1,0 +1,124 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+
+body{
+    background-color: #D8BFD8;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+h1{
+    padding: 5px;
+    padding-left: 30px;
+    display: inline-block;
+    font-size: 50px;
+    cursor: pointer;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #9932CC;
+}
+
+.superior a{
+    padding: 20px;
+    float: right;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline-block;
+    margin-top: -60px;
+    box-shadow:0 2px 4px 0 rgba(0,0,0,0.5);
+    }
+
+.superior{
+    background-color: yellow;
+    overflow: auto;
+}
+
+.lateral{
+    width: 15%;
+    height: 100vh;
+    background-color: #8B008B;
+    float: left;
+    overflow: hidden;
+}
+
+.lateral ul li{
+    padding: 10px;
+}
+
+.lateral a{
+    color: yellow;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.lateral li:hover{
+    background-color: yellow;
+}
+
+.lateral li:hover a{
+    color: #9932CC;
+}
+
+.lateral.active{
+    width: 150px;
+}
+
+.conteudo{
+    float: left;
+    display: inline-block;
+    margin-left: 40%;
+    margin-top: 10%;
+}
+
+.acordeao{
+    padding: 20px;
+    cursor: pointer;
+    display: block;
+    background-color: #8B008B;
+    color: yellow;
+}
+
+div.cont{
+    padding: 10px;
+    background-color: blueviolet;
+    color: white;
+    display: none;
+    color: #9932cc;
+    background-color: yellow;
+}
+
+.menu{
+    float: left;
+    padding: 5px;
+    margin: 15px;
+    border-radius: 5px;
+    display: none;
+    cursor: pointer;
+    background-color: #D8BFD8;
+}
+
+@media screen and (max-width: 480px){
+    .menu{
+        display: inline-block;
+    }
+
+    h1{
+        font-size: 20px;
+        margin-top: 12px;
+    }
+    .lateral {
+        width: 0px;
+        transition: width 300ms;
+    }
+
+    .conteudo{
+        margin-top: 20%;
+    }
+}
