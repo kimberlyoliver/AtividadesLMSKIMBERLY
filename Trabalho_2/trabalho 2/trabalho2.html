@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kim WhatsChat'O</title>
+    <link rel="stylesheet" href="trabalho2.css">
+    <meta>
+</head>
+<body>
+
+    <div class="casa">
+            <header class="navbar">
+                    <div class="logo">
+                        <h1>Kim WhatsChat'O</h1>
+                    </div>
+                    <div class="group-name" id="nome-amigo"></div>
+                    <div class="login">
+                        <button id="myBtn">Entrar</button>
+                    </div>
+            </header>
+
+            <div class="container">
+              <div class="lateral">
+                  <ul class="sidebar" id="amigosList"></ul>
+                  <div class="criando">
+                        <form class="criarGrupo" action="">
+                                <h3>Cadastrar um novo Grupo</h3>
+                                <input type="text" placeholder="Nome do grupo" id="newGrupo" class = "caixa-grupo">
+                        </form>
+                        <button class= "criar" onclick="createGroup()">Criar</button>
+                  </div>
+              </div>
+
+                <div class="mensagem" id="mensagem">
+
+                </div>
+                <form action="" class="input-mensagem">
+                    <textarea name="message" id="msg"></textarea>
+                </form>
+                <button class = "botao" onclick="sendMsg()">Enviar</button>
+            </div>
+    </div>
+
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>LOGIN</p>
+            <input type="text" placeholder="digite seu id" id="user">
+            <button onclick="login()">Login</button>
+        </div>
+
+    </div>
+
+    <script src="trabalho2.js"></script>
+</body>
+</html>

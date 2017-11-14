@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.casa{
+    width: 900px;
+    margin: auto;
+}
+.sidebar {
+    float: left;
+    list-style-type: none;
+    width:100%;
+    background-color: #8f149c;
+    height: 90%;
+    overflow: auto;
+}
+
+.sidebar li a {
+    display: block;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.sidebar li a.active {
+    background-color: #f369be;
+    color: white;
+}
+
+.sidebar li a:hover:not(.active) {
+    background-color: #f369be;
+    color: white;
+}
+
+.navbar{
+    overflow: hiden;
+    color: white;
+    height: 10vh;
+}
+.navbar>*{
+    background-color: #7b1386;
+    color: white;
+    float: left;
+
+}
+.login{
+    width: 30%;
+    height: 100%;
+}
+.login>button{
+    float: right;
+    height: 70%;
+    margin: 10px;
+    padding: 0 10px;
+    border: 0;
+    background-color: #f369be;
+    box-sizing: border-box;
+    color: white;
+}
+.group-name{
+    font-size: 2em;
+    width: 40%;
+    height: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+.logo{
+    width: 30%;
+    height: 100%;
+    font-size: 10px;
+}
+
+h1{
+    margin: 15px;
+}
+
+.mensagem{
+    background-color: #f369be;
+    float: left;
+    width: 75%;
+    height:90%;
+}
+.input-mensagem{
+    float: left;
+    width: 600px;
+    height:10%;
+    overflow: hidden;
+}
+
+.input-mensagem textarea{
+    float: left;
+    min-width:100%;
+    min-height:100%;
+    max-width:90%;
+    max-height:100%;
+}
+.input-mensagem button{
+    float: left;
+    width: 9%;
+    height: 100%;
+    border: 0;
+    background-color: #8f149c;
+    box-sizing: border-box;
+    color: white;
+}
+
+.botao{
+    float: left;
+    background-color: #8f149c;
+    padding: 15px;
+    color: white;
+    position: absolute;
+    margin-top: 550px;
+    margin-left: -70px;
+}
+
+.avatar-img {
+    width: 40px;
+    height: 40px;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.container {
+    height: 90vh;
+    width: 900px;
+}
+
+.criarGrupo{
+    width: 100%;
+    float: left;
+    overflow: hidden;
+    padding-left: 5px;
+    background-color: #8f149c;
+    color: white;
+}
+.criarGrupo h3{
+    padding-bottom: 5px;
+}
+
+.criando{
+    height: 100%;
+    background-color: #8f149c;
+}
+
+.criar{
+    padding: 0px 5px;
+    background-color: #f369be;
+    float: right;
+    position: absolute;
+    top: 680px;
+    margin-left: -50px;
+}
+
+.lateral{
+    width: 25%;
+    height: 100%;
+    float: left;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999999999999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #f369be;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #8f149c;
+    width: 80%;
+    color: white;
+}
+
+
+.close {
+    color: ;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
