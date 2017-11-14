@@ -23,3 +23,21 @@ function mostrar() {
 }
 
 button.addEventListener("click", mostrar);
+
+
+// let titles = document.querySelectorAll (".acordeao,...,")
+// let bodies = document.querySelectorAll (".acordeao,...,")
+
+// for(let i-0; i<titles.lenght; i++){
+//     titles[i].addEventListener("click",function(){
+//         if(bodies[i].classList.containts("active")){
+//             bodies[i].classList.remove("active")
+//         }
+//         else{
+//         bodies.forEach(function(e){
+//             e.classList.remove("active");
+//         })
+//         bodies[i].classList.add("active");
+//         }
+//     } )
+// }
