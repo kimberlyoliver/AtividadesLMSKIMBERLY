@@ -1,0 +1,49 @@
+*{
+    margin: 0PX;
+    padding: 0PX;
+}
+
+body{
+    background-color: #851717;
+
+}
+
+.superior{
+    background-color: #423C3C;
+    overflow: auto;
+    padding: 15px;
+    opacity: 0.9;
+    position: fixed;
+    width: 100vw;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, .5);
+}
+
+.superior h1{
+    color: white;
+}
+
+.galera{
+    margin-left: 120px;    
+    background-color: white;
+    width: 1094px;
+}
+
+.galeria{
+    display: inline-block;
+    width: 350px;
+}
+
+.galeria img{
+    /* width: 300px; */
+    height: 400px;
+}
+
+#primeira{
+    display: block;
+    width: 800px;
+    height: 800px;
+}
+
+#primeira img{
+    height: 730px;
+}

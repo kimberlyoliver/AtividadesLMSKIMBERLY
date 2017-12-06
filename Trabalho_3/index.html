@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="trabalho3.css">
+        <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Loja Kimberly</title>
+    </head>
+    <body style="background-color: #851717 !important">
+        <header>
+            <nav class="navbar navbar-default" style="background-color: #423c3c !important">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#" style="color: white !important" >BoaXfestas</a>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" id="entrar-drop" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: white !important">Entrar <span class="caret"></span></a>
+                        <ul class="dropdown-menu col-xs-12" style="width: 350px !important;">
+                            <div class="container-fluid">
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-2 control-label">Usuário</label>
+                                        <div class="col-sm-10">
+                                            <input type="email" class="form-control" id="inputEmail3" placeholder="ex: sejasexy@aqui.com">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputPassword3" class="col-sm-2 control-label">Senha</label>
+                                        <div class="col-sm-10">
+                                            <input type="password" class="form-control" id="inputPassword3" placeholder="ex: *******">
+                                        </div>
+                                    </div>
+                                </form>
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button class="btn btn-success" onclick="login()">Entrar</button>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" id="cadastrar-drop" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: white !important">Cadastrar <span class="caret"></span></a>
+                        <ul class="dropdown-menu col-xs-12" style="width: 350px !important;">
+                            <li>
+                                <div class="container-fluid">
+                                    <div class="form-horizontal" novalidate>
+                                        <div class="form-group">
+                                            <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="email-cadastro" placeholder="ex: meu@email.com.br">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-2 control-label">Senha</label>
+                                            <div class="col-sm-10">
+                                                <input type="password" class="form-control" id="senha-cadastro" placeholder="ex: *******">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-2 col-sm-10">
+                                                <button class="btn btn-primary" onclick="cadastrar()">Cadastrar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="" id="useremail" style="color: white;"></a>
+                    </li>
+                    <li class="dropdown">
+                        <a id="shopping-cart" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: white !important">
+                           <span style="color: white;" class="glyphicon glyphicon-shopping-cart" aria-hidden="true">
+                           </span> Compras
+                        </a>
+                        <ul class="dropdown-menu col-xs-12" style="width: 350px !important;">
+                            <li>
+                                <h3 class="container-fluid">Seu Carrinho</h3>
+                                <div class="container-fluid" id="myList">
+                                </div>
+                                <button id="finalizar-btn" class="btn center-block" onclick="finalizar()">Finalizar</button>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="" id="logout-btn" onclick="logout()" style="color: white;">Logout</a>
+                    </li>
+                </ul>
+            </div>
+            </nav>
+        </header>
+
+        <div class="container" id="gallery">
+            <div class="galeria" id="primeira"><img src="imagens/00.jpg" alt=""></div>                            
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-5 col-md-3">
+                        <div class="thumbnail">
+                            <img src="imagens/01.jpg" alt="">
+                            <div class="caption">
+                                <h3>baby Doll</h3>
+                                <h4>R$ 70,90</h4>
+                                <p>Baby Dolls lindos, que deixa seu corpo ainda mais irresistível.</p>
+                                <div class="prod">
+                                    <input type="number" id="qtd1" placeholder="Quantidade" style="width: 90px">
+                                    <a href="#" class="btn btn-primary" role="button" style="background-color: rgb(18, 17, 18) !important" onclick="adicionarItem(1,'CD Dancing with cats',49.90)">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-5 col-md-3">
+                        <div class="thumbnail">
+                            <img src="imagens/02.jpg" alt="">
+                            <div class="caption">
+                                <h3>Baby Doll</h3>
+                                <h4>R$ 80,90</h4>
+                                <p>Baby Dolls lindos, que deixa seu corpo ainda mais irresistível.</p>
+                                <div class="prod">
+                                    <input type="number"  id="qtd2" placeholder="Quantidade" style="width: 90px">
+                                    <a href="#" class="btn btn-primary" role="button" style="background-color: rgb(18, 17, 18) !important" onclick="adicionarItem(2,'Fronha de travesseiro Nicolas Cage',34.90)">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5 col-md-3">
+                        <div class="thumbnail">
+                            <img src="imagens/03.jpg" alt="...">
+                            <div class="caption">
+                                <h3>Baby Doll</h3>
+                                <h4>R$ 700,00</h4>
+                                <p>Baby Dolls lindos, que deixa seu corpo ainda mais irresistível.</p>
+                                <div class="prod">
+                                    <input type="number" id="qtd3" placeholder="Quantidade" style="width: 90px">
+                                    <a href="#" class="btn btn-primary" role="button" style="background-color: rgb(18, 17, 18) !important" onclick="adicionarItem(3,'Bandaid de bacons',5.00)">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5 col-md-3">
+                        <div class="thumbnail">
+                            <img src="imagens/04.jpg" alt="...">
+                            <div class="caption">
+                                <h3>Baby Doll</h3>
+                                <h4>R$ 45,00</h4>
+                                <p>Baby Dolls lindos, que deixa seu corpo ainda mais irresistível.</p>
+                                <div class="prod">
+                                    <input type="number"  id="qtd4" placeholder="Quantidade" style="width: 90px">
+                                    <a href="#" class="btn btn-primary" role="button" style="background-color: rgb(18, 17, 18) !important" onclick="adicionarItem(4,'Roupa de Marilyn Monroe para cachorros',85.00)">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-5 col-md-3">
+                        <div class="thumbnail">
+                            <img src="imagens/05.jpg" alt="...">
+                            <div class="caption">
+                                <h3>Baby Doll</h3>
+                                <h4>R$62,00</h4>
+                                <p>Baby Dolls lindos, que deixa seu corpo ainda mais irresistível.</p>
+                                <div class="prod">
+                                    <input type="number" id="qtd5" placeholder="Quantidade" style="width: 90px">
+                                    <a href="#" class="btn btn-primary" role="button" style="background-color: rgb(18, 17, 18) !important" onclick="adicionarItem(5,'Chifre de unicórnio para gatos',27.90)">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5 col-md-3">
+                        <div class="thumbnail">
+                            <img src="imagens/06.jpg" alt="...">
+                            <div class="caption">
+                                <h3>Espartilhos</h3>
+                                <h4>R$ 289,00</h4>
+                                <p>Espartilhos sortidos, o aperto que vale a pena e não aperta no seu bolso.</p>
+                                <div class="prod">
+                                    <input type="number"  id="qtd6" placeholder="Quantidade" style="width: 90px">
+                                    <a href="#" class="btn btn-primary" role="button" style="background-color: rgb(18, 17, 18) !important" onclick="adicionarItem(6,'Papel higiênico Donald Trump',2.00)">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="col-sm-5 col-md-3">
+                        <div class="thumbnail">
+                            <img src="imagens/07.jpg" alt="...">
+                            <div class="caption">
+                                <h3>Espartilhos</h3>
+                                <h4>R$ 150,00</h4>
+                                <p>Espartilhos sortidos, o aperto que vale a pena e não aperta no seu bolso.</p>                                
+                                <div class="prod">
+                                    <input type="number"  id="qtd7" placeholder="Quantidade" style="width: 90px">
+                                    <a href="#" class="btn btn-primary" role="button" style="background-color: rgb(18, 17, 18) !important" onclick="adicionarItem(7,'Comida para unicórnios',150.00)">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5 col-md-3">
+                        <div class="thumbnail">
+                            <img src="imagens/08.jpg" alt="...">
+                            <div class="caption">
+                                <h3>Espartilhos</h3>
+                                <h4>R$ 600,00</h4>
+                                <p>Espartilhos sortidos, o aperto que vale a pena e não aperta no seu bolso.</p>                                
+                                <div class="prod">
+                                    <input type="number" id="qtd8" placeholder="Quantidade" style="width: 90px">
+                                    <a href="#" class="btn btn-primary" role="button" style="background-color: rgb(18, 17, 18) !important" onclick="adicionarItem(8,'Luvas de cueca',38.50)">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <div class="col-sm-5 col-md-3">
+                        <div class="thumbnail">
+                            <img src="imagens/09.jpg" alt="...">
+                            <div class="caption">
+                                <h3>Espartilhos</h3>
+                                <h4>R$ 240,00</h4>
+                                <p>Espartilhos sortidos, o aperto que vale a pena e não aperta no seu bolso.</p>                                
+                                <div class="prod">
+                                    <input type="number" id="qtd8" placeholder="Quantidade" style="width: 90px">
+                                    <a href="#" class="btn btn-primary" role="button" style="background-color: rgb(18, 17, 18) !important" onclick="adicionarItem(8,'Luvas de cueca',38.50)">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5 col-md-3">
+                        <div class="thumbnail">
+                            <img src="imagens/09.jpg" alt="...">
+                            <div class="caption">
+                                <h3>Espartilhos</h3>
+                                <h4>R$ 50,00</h4>
+                                <p>Espartilhos sortidos, o aperto que vale a pena e não aperta no seu bolso.</p>                                
+                                <div class="prod">
+                                    <input type="number" id="qtd8" placeholder="Quantidade" style="width: 90px">
+                                    <a href="#" class="btn btn-primary" role="button" style="background-color: rgb(18, 17, 18) !important" onclick="adicionarItem(8,'Luvas de cueca',38.50)">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5 col-md-3">
+                        <div class="thumbnail">
+                            <img src="imagens/10.jpg" alt="...">
+                            <div class="caption">
+                                <h3>Espartilhos</h3>
+                                <h4>R$ 340,00</h4>
+                                <p>Espartilhos sortidos, o aperto que vale a pena e não aperta no seu bolso.</p>                                
+                                <div class="prod">
+                                    <input type="number" id="qtd8" placeholder="Quantidade" style="width: 90px">
+                                    <a href="#" class="btn btn-primary" role="button" style="background-color: rgb(18, 17, 18) !important" onclick="adicionarItem(8,'Luvas de cueca',38.50)">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5 col-md-3">
+                        <div class="thumbnail">
+                            <img src="imagens/11.jpg" alt="...">
+                            <div class="caption">
+                                <h3>Camisolas</h3>
+                                <h4>R$ 40,00</h4>
+                                <p>Camisolas lindas. Porque dormir com conforto também pode ser excitante.</p>                                
+                                <div class="prod">
+                                    <input type="number" id="qtd8" placeholder="Quantidade" style="width: 90px">
+                                    <a href="#" class="btn btn-primary" role="button" style="background-color: rgb(18, 17, 18) !important" onclick="adicionarItem(8,'Luvas de cueca',38.50)">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5 col-md-3">
+                        <div class="thumbnail">
+                            <img src="imagens/12.jpg" alt="...">
+                            <div class="caption">
+                                <h3>Camisolas</h3>
+                                <h4>R$ 90,00</h4>
+                                <p>Camisolas lindas. Porque dormir com conforto também pode ser excitante.</p>                                
+                                <div class="prod">
+                                    <input type="number" id="qtd8" placeholder="Quantidade" style="width: 90px">
+                                    <a href="#" class="btn btn-primary" role="button" style="background-color: rgb(18, 17, 18) !important" onclick="adicionarItem(8,'Luvas de cueca',38.50)">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5 col-md-3">
+                        <div class="thumbnail">
+                            <img src="imagens/13.jpg" alt="...">
+                            <div class="caption">
+                                <h3>Camisolas</h3>
+                                <h4>R$ 44,00</h4>
+                                <p>Camisolas lindas. Porque dormir com conforto também pode ser excitante.</p>                                
+                                <div class="prod">
+                                    <input type="number" id="qtd8" placeholder="Quantidade" style="width: 90px">
+                                    <a href="#" class="btn btn-primary" role="button" style="background-color: rgb(18, 17, 18) !important" onclick="adicionarItem(8,'Luvas de cueca',38.50)">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5 col-md-3">
+                        <div class="thumbnail">
+                            <img src="imagens/14.jpg" alt="...">
+                            <div class="caption">
+                                <h3>Camisolas</h3>
+                                <h4>R$ 90,00</h4>
+                                <p>Camisolas lindas. Porque dormir com conforto também pode ser excitante.</p>                                
+                                <div class="prod">
+                                    <input type="number" id="qtd8" placeholder="Quantidade" style="width: 90px">
+                                    <a href="#" class="btn btn-primary" role="button" style="background-color: rgb(18, 17, 18) !important" onclick="adicionarItem(8,'Luvas de cueca',38.50)">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5 col-md-3">
+                        <div class="thumbnail">
+                            <img src="imagens/15.jpg" alt="...">
+                            <div class="caption">
+                                <h3>Camisolas</h3>
+                                <h4>R$ 65,00</h4>
+                                <p>Camisolas lindas. Porque dormir com conforto também pode ser excitante.</p>                                
+                                <div class="prod">
+                                    <input type="number" id="qtd8" placeholder="Quantidade" style="width: 90px">
+                                    <a href="#" class="btn btn-primary" role="button" style="background-color: rgb(18, 17, 18) !important" onclick="adicionarItem(8,'Luvas de cueca',38.50)">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5 col-md-3">
+                        <div class="thumbnail">
+                            <img src="imagens/16.jpg" alt="...">
+                            <div class="caption">
+                                <h3>Ligeries</h3>
+                                <h4>R$ 20,00</h4>
+                                <p>Lingeries de arrasar! Suas curvas ainda mais envolventes.</p>                                
+                                <div class="prod">
+                                    <input type="number" id="qtd8" placeholder="Quantidade" style="width: 90px">
+                                    <a href="#" class="btn btn-primary" role="button" style="background-color: rgb(18, 17, 18) !important" onclick="adicionarItem(8,'Luvas de cueca',38.50)">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5 col-md-3">
+                        <div class="thumbnail">
+                            <img src="imagens/17.jpg" alt="...">
+                            <div class="caption">
+                                <h3>Ligeries</h3>
+                                <h4>R$ 208,00</h4>
+                                <p>Lingeries de arrasar! Suas curvas ainda mais envolventes.</p>                                
+                                <div class="prod">
+                                    <input type="number" id="qtd8" placeholder="Quantidade" style="width: 90px">
+                                    <a href="#" class="btn btn-primary" role="button" style="background-color: rgb(18, 17, 18) !important" onclick="adicionarItem(8,'Luvas de cueca',38.50)">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5 col-md-3">
+                        <div class="thumbnail">
+                            <img src="imagens/18.jpg" alt="...">
+                            <div class="caption">
+                                <h3>Ligeries</h3>
+                                <h4>R$ 27,00</h4>
+                                <p>Lingeries de arrasar! Suas curvas ainda mais envolventes.</p>                                
+                                <div class="prod">
+                                    <input type="number" id="qtd8" placeholder="Quantidade" style="width: 90px">
+                                    <a href="#" class="btn btn-primary" role="button" style="background-color: rgb(18, 17, 18) !important" onclick="adicionarItem(8,'Luvas de cueca',38.50)">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5 col-md-3">
+                        <div class="thumbnail">
+                            <img src="imagens/19.jpg" alt="...">
+                            <div class="caption">
+                                <h3>Ligeries</h3>
+                                <h4>R$ 40,00</h4>
+                                <p>Lingeries de arrasar! Suas curvas ainda mais envolventes.</p>                                
+                                <div class="prod">
+                                    <input type="number" id="qtd8" placeholder="Quantidade" style="width: 90px">
+                                    <a href="#" class="btn btn-primary" role="button" style="background-color: rgb(18, 17, 18) !important" onclick="adicionarItem(8,'Luvas de cueca',38.50)">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5 col-md-3">
+                        <div class="thumbnail">
+                            <img src="imagens/20.jpg" alt="...">
+                            <div class="caption">
+                                <h3>Ligeries</h3>
+                                <h4>R$ 35,00</h4>
+                                <p>Lingeries de arrasar! Suas curvas ainda mais envolventes.</p>                                
+                                <div class="prod">
+                                    <input type="number" id="qtd8" placeholder="Quantidade" style="width: 90px">
+                                    <a href="#" class="btn btn-primary" role="button" style="background-color: rgb(18, 17, 18) !important" onclick="adicionarItem(8,'Luvas de cueca',38.50)">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5 col-md-3">
+                        <div class="thumbnail">
+                            <img src="imagens/21.jpg" alt="...">
+                            <div class="caption">
+                                <h3>Masculino</h3>
+                                <h4>R$ 60,00</h4>
+                                <p>E os homens também precisam se vestir e entrar na festa, não é mesmo? Boas festas para todos! Gozem bastante nessa época do ano.</p>                                
+                                <div class="prod">
+                                    <input type="number" id="qtd8" placeholder="Quantidade" style="width: 90px">
+                                    <a href="#" class="btn btn-primary" role="button" style="background-color: rgb(18, 17, 18) !important" onclick="adicionarItem(8,'Luvas de cueca',38.50)">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5 col-md-3">
+                        <div class="thumbnail">
+                            <img src="imagens/22.jpg" alt="...">
+                            <div class="caption">
+                                <h3>Masculino</h3>
+                                <h4>R$ 47,00</h4>
+                                <p>E os homens também precisam se vestir e entrar na festa, não é mesmo? Boas festas para todos! Gozem bastante nessa época do ano.</p>                                
+                                <div class="prod">
+                                    <input type="number" id="qtd8" placeholder="Quantidade" style="width: 90px">
+                                    <a href="#" class="btn btn-primary" role="button" style="background-color: rgb(18, 17, 18) !important" onclick="adicionarItem(8,'Luvas de cueca',38.50)">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5 col-md-3">
+                        <div class="thumbnail">
+                            <img src="imagens/22.jpg" alt="...">
+                            <div class="caption">
+                                <h3>Masculino</h3>
+                                <h4>R$ 30,00</h4>
+                                <p>E os homens também precisam se vestir e entrar na festa, não é mesmo? Boas festas para todos! Gozem bastante nessa época do ano.</p>                                
+                                <div class="prod">
+                                    <input type="number" id="qtd8" placeholder="Quantidade" style="width: 90px">
+                                    <a href="#" class="btn btn-primary" role="button" style="background-color: rgb(18, 17, 18) !important" onclick="adicionarItem(8,'Luvas de cueca',38.50)">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5 col-md-3">
+                        <div class="thumbnail">
+                            <img src="imagens/23.jpg" alt="...">
+                            <div class="caption">
+                                <h3>Masculino</h3>
+                                <h4>R$ 20,00</h4>
+                                <p>E os homens também precisam se vestir e entrar na festa, não é mesmo? Boas festas para todos! Gozem bastante nessa época do ano.</p>                                
+                                <div class="prod">
+                                    <input type="number" id="qtd8" placeholder="Quantidade" style="width: 90px">
+                                    <a href="#" class="btn btn-primary" role="button" style="background-color: rgb(18, 17, 18) !important" onclick="adicionarItem(8,'Luvas de cueca',38.50)">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5 col-md-3">
+                        <div class="thumbnail">
+                            <img src="imagens/24.jpg" alt="...">
+                            <div class="caption">
+                                <h3>Masculino</h3>
+                                <h4>R$ 50,00</h4>
+                                <p>E os homens também precisam se vestir e entrar na festa, não é mesmo? Boas festas para todos! Gozem bastante nessa época do ano.</p>                                
+                                <div class="prod">
+                                    <input type="number" id="qtd8" placeholder="Quantidade" style="width: 90px">
+                                    <a href="#" class="btn btn-primary" role="button" style="background-color: rgb(18, 17, 18) !important" onclick="adicionarItem(8,'Luvas de cueca',38.50)">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5 col-md-3">
+                        <div class="thumbnail">
+                            <img src="imagens/25.jpg" alt="...">
+                            <div class="caption">
+                                <h3>Masculino</h3>
+                                <h4>R$ 10,00</h4>
+                                <p>E os homens também precisam se vestir e entrar na festa, não é mesmo? Boas festas para todos! Gozem bastante nessa época do ano.</p>                                
+                                <div class="prod">
+                                    <input type="number" id="qtd8" placeholder="Quantidade" style="width: 90px">
+                                    <a href="#" class="btn btn-primary" role="button" style="background-color: rgb(18, 17, 18) !important" onclick="adicionarItem(8,'Luvas de cueca',38.50)">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5 col-md-3">
+                        <div class="thumbnail">
+                            <img src="imagens/26.jpg" alt="...">
+                            <div class="caption">
+                                <h3>Masculino</h3>
+                                <h4>R$ 240,00</h4>
+                                <p>E os homens também precisam se vestir e entrar na festa, não é mesmo? Boas festas para todos! Gozem bastante nessa época do ano.</p>                                
+                                <div class="prod">
+                                    <input type="number" id="qtd8" placeholder="Quantidade" style="width: 90px">
+                                    <a href="#" class="btn btn-primary" role="button" style="background-color: rgb(18, 17, 18) !important" onclick="adicionarItem(8,'Luvas de cueca',38.50)">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5 col-md-3">
+                        <div class="thumbnail">
+                            <img src="imagens/27.jpg" alt="...">
+                            <div class="caption">
+                                <h3>Masculino</h3>
+                                <h4>R$ 300,00</h4>
+                                <p>E os homens também precisam se vestir e entrar na festa, não é mesmo? Boas festas para todos! Gozem bastante nessa época do ano.</p>                                
+                                <div class="prod">
+                                    <input type="number" id="qtd8" placeholder="Quantidade" style="width: 90px">
+                                    <a href="#" class="btn btn-primary" role="button" style="background-color: rgb(18, 17, 18) !important" onclick="adicionarItem(8,'Luvas de cueca',38.50)">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="trabalho3.js"></script>
+    </body>
+</html>

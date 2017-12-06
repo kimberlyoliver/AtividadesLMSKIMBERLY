@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Loja Kimberly</title>
+    </head>
+    <body  onload="fillTable()" >
+        <header>
+            <nav class="navbar navbar-default" style="background-color: #851717 !important">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#" style="color: white !important" onclick="goHome()">BoaXfestas</a>
+                    </div>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" id="entrar-drop" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: white !important">Entrar <span class="caret"></span></a>
+                            <ul class="dropdown-menu col-xs-12" style="width: 350px !important;">
+                                <div class="container-fluid">
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <label for="inputEmail3" class="col-sm-2 control-label">Usuário</label>
+                                            <div class="col-sm-10">
+                                                <input type="email" class="form-control" id="inputEmail3" placeholder="ex: sejasexy@aqui.com">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-2 control-label">Senha</label>
+                                            <div class="col-sm-10">
+                                                <input type="password" class="form-control" id="inputPassword3" placeholder="ex: *******">
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button class="btn btn-success" onclick="login()">Entrar</button>
+                                    </div>
+                                </div>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" id="cadastrar-drop" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: white !important">Cadastrar <span class="caret"></span></a>
+                            <ul class="dropdown-menu col-xs-12" style="width: 350px !important;">
+                                <li>
+                                    <div class="container-fluid">
+                                        <div class="form-horizontal" novalidate>
+                                            <div class="form-group">
+                                                <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" id="email-cadastro" placeholder="ex: meu@email.com.br">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputPassword3" class="col-sm-2 control-label">Senha</label>
+                                                <div class="col-sm-10">
+                                                    <input type="password" class="form-control" id="senha-cadastro" placeholder="ex: *******">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-sm-offset-2 col-sm-10">
+                                                    <button class="btn btn-primary" onclick="cadastrar()">Cadastrar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" id="useremail" style="color: white;"></a>
+                        </li>
+                        <li class="dropdown">
+                            <a id="shopping-cart" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: white !important">
+                                   <span style="color: white;" class="glyphicon glyphicon-shopping-cart" aria-hidden="true">
+                                   </span> Compras
+                            </a>
+                            <ul class="dropdown-menu col-xs-12" style="width: 350px !important;">
+                                <li>
+                                    <h3 class="container-fluid">Seu Carrinho</h3>
+                                    <div class="container-fluid" id="myList">
+                                    </div>
+                                    <button id="finalizar-btn" class="btn center-block" onclick="finalizar()">Finalizar</button>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" id="logout-btn" onclick="logout()" style="color: white;">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2 class="text-center">Suas Compras</h2>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Quantidade</th>
+                            <th scope="col">Produto</th>
+                            <th scope="col">Valor Total</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tablebody">
+                        </tbody>
+                    </table>
+                    <h3>Total <span id="totalPagar"></span></h3>
+                    <button class="btn btn-primary center-block" onclick="pagar()" style="width: 100px; height: 50px;">Pagar</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2 class="text-center">Histórico</h2>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Data</th>
+                            <th scope="col">Hora</th>
+                            <th scope="col">Valor</th>
+                        </tr>
+                        </thead>
+                        <tbody id="comprasbody">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="trabalho3.js"></script>
+    </body>
+</html>
